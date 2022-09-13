@@ -1,8 +1,11 @@
-<head>
-    <script src="index.js"></script>
-    <link rel="stylesheet" href="index.css">
-</head>
-<body>
-    <input id="myfiles" multiple type="file">
-    <pre class="output">Selected files:</pre>
-</body>
+<input id='file-input' type='file' multiple>
+<script>
+  var fileInput = document.getElementById('file-input');
+  fileInput.addEventListener('change', function(event) {
+    var input = event.target;
+
+    for (var i = 0; i < input.files.length; i++) {
+      console.log(input.files[i].name);
+    }
+  });
+</script>
